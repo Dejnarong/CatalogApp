@@ -1,0 +1,10 @@
+<div class="jumbotron text-center" style="background-image: url({{ url_for('static', filename='yz1.jpg') }});">
+        <h1>HYPEBEAST CATALOG APP</h1> 
+        <p>HYPEEEEEEEEEEEEEEEEEEEE!!!!!!</p>
+        <a href="{{url_for('showCatalog')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Home</a> 
+        {%if 'username' not in session %}
+        <a href="{{url_for('showLogin')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Log in</a> 
+        {% else %}
+        <a href="{{url_for('disconnect')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Log Out</a>
+        {% endif %}        
+</div>

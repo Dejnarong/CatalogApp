@@ -1,0 +1,44 @@
+{% extends "main.html" %}
+{% include "header.html" %}
+{% block content %}
+	<div class="row divider green">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row banner menu">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+            <h1>New Category Item</h1>
+            <hr>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1 padding-top">
+			<form action="#" method = "post">
+				<div class="form-group">
+					<h4><label for="name">Title:</label></h4>
+                    <input type ="text" maxlength="50" class="form-control" name="title"placeholder="Category item title..." id="name" required>
+                    <br>
+					<h4><label for="description">Description:</label></h4>
+					<textarea class="form-control" maxlength="250" rows="3" name="description" placeholder="Description of the item..." required></textarea>
+                    <br>
+                    <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <label class="input-group-text" for="inputGroupSelect01">Category Name</label>
+                            </div>
+                        
+                            <select class="custom-select" id="inputGroupSelect01" name="category_name">
+                                {% for category in categories %}
+                                    <option>{{category.name}}</option>
+                                {% endfor %}
+                            </select>
+                    </div>
+
+					<button type="submit" class="btn btn-secondary" id="submit" type="submit">
+                        <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>Create
+					</button>
+					<a class="btn btn-secondary" href="{{url_for('showCatalog')}}" role="button">Cancel</a>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}
+

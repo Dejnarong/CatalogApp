@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+{% include "header.html" %}
+{% block content %}
+<h1>Delete Item</h1>
+<hr>
+<h3> Are you sure you want to delete?</h3>
+<h4 style="color:red;">{{item.title}}</h4>
+<br>
+<form action="#" method = 'post'>
+        <button type="submit" class="btn btn-secondary" id="submit" type="submit">
+                Delete
+            </button>
+            <a class="btn btn-secondary" href="{{url_for('showCatalog')}}" role="button">Cancel</a>
+</form>
+{% endblock %}

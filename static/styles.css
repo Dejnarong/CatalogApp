@@ -1,0 +1,115 @@
+.jumbotron { 
+    background-color: #070504;
+    color: rgb(114, 113, 109);
+    width: 100%;
+    background-size: 65%;
+  }
+.jumbotron p {
+    color: rgb(151, 150, 144)
+}
+
+  .col-4 {
+      background-color: rgb(177, 231, 213);
+      color: #ffffff;
+      
+  }
+  
+  .col-8 {
+      background-color: rgb(177, 231, 213);
+      color: #ffffff;
+  }
+
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      height: 100%;
+      margin: auto;
+      
+  }
+
+  .carousel-inner {
+      width: 100%;
+      height: 50%;
+      margin: auto;
+      padding-top: 20px;
+  }
+
+  /* Create two columns/boxes that floats next to each other */
+  nav {
+      float: left;
+      width: 25%;
+      height: 40%; /* only for demonstration, should be removed */
+      background: rgb(202, 199, 185);
+      padding: 20px;                 
+  }
+
+  /* Style the list inside the menu */
+  nav ul {
+      list-style-type: none;
+      padding: 0;
+  }
+
+  nav :any-link {
+      color: #ffffff;
+      font-size: larger;
+  }
+
+  article {
+      float: left;
+      padding: 20px;
+      padding-left: 40px;
+     
+      width: 75%;
+      background-color: rgb(226, 218, 99);
+      height: 40%; /* only for demonstration, should be removed */
+      border-left-style: solid;
+      border-left-width: 80%;
+      border-left-color: #ffffff;
+
+  }
+
+  article ul {
+    list-style-type: none;
+    padding: 0;
+
+  }
+
+
+
+  article :any-link {
+      color:#ffffff;
+      font-size: larger;
+  }
+
+
+  section:after {
+      content: "";
+      display: table;
+      clear: both;
+  }                        
+  
+  @media (max-width: 100%) {
+      nav, article {
+      width: 100%;
+      height: auto;                 
+      }
+    }
+
+    .flash {
+        background-color: rgb(184, 230, 184);
+        width:100%;
+        text-decoration: none;
+    
+    }
+    
+    .flash li {
+        list-style-type: none;
+        text-align: center;
+    
+    }
+
+    .rounded-circle {
+        max-width: 2%;
+        max-height: 2%;
+    }
+  
+

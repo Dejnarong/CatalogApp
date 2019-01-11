@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+{% include "header.html" %}
+{% block content %}
+<section> 
+        <nav>
+            <h2>Catagories</h2>
+              <ul>
+                  {% for category in categories %}
+                    <li>
+                        <a href="{{url_for('showAllItem', catalog_name = category.name)}}">{{category.name}}</a>
+                    </li>
+                  {% endfor %}
+              </ul>
+        </nav>
+            
+        <article>
+            <h2>{{catalogname}} Items ({{ categoriesitems.count() }} items)</h2>
+                <ul>
+                  {% for categoriesitem in categoriesitems %}
+                    <li>
+                        <a href="{{url_for('showItemDetail', catalog_name = catalogname, item_name = categoriesitem.title)}}">{{categoriesitem.title}}</a>
+                    </li>
+                  {% endfor %}
+                </ul>                             
+        </article>
+    </section>            
+</div>
+{% endblock %}

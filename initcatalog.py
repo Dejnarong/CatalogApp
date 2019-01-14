@@ -29,17 +29,22 @@ category1 = Categories(id=1, name="Adidas")
 session.add(category1)
 session.commit()
 
-categoryitem1 = CategoriesItem(id=1, title="NMD", description="NMD", categories_id=1, user_id=1)
+categoryitem1 = CategoriesItem(
+        id=1, title="NMD", description="NMD", categories_id=1, user_id=1)
 
 session.add(categoryitem1)
 session.commit()
 
-categoryitem2 = CategoriesItem(id=2, title="Yeezy 350 V2", description="Yeezy by Kanye West", categories_id=1, user_id=1)
+categoryitem2 = CategoriesItem(
+        id=2, title="Yeezy 350 V2", description="Yeezy by Kanye West",
+        categories_id=1, user_id=1)
 
 session.add(categoryitem2)
 session.commit()
 
-categoryitem3 = CategoriesItem(id=3, title="Yeezy 500", description="Yeezy by Kanye West", categories_id=1, user_id=1)
+categoryitem3 = CategoriesItem(
+        id=3, title="Yeezy 500", description="Yeezy by Kanye West",
+        categories_id=1, user_id=1)
 
 session.add(categoryitem3)
 session.commit()

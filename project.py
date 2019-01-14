@@ -319,8 +319,9 @@ def deleteItem(catalog_name, item_name):
         return render_template('deletecatalogitem.html', item=deleteitem_id)
 
 
+# JSON API
 # Get all data to json file
-@app.route('/catalog.json')
+@app.route('/catalog/JSON')
 def catalogJSON():
     if 'username' not in login_session:
         return redirect('/login')
@@ -330,6 +331,30 @@ def catalogJSON():
             Category=[dict(
                 c.serialize,
                 Item=[i.serialize for i in c.item]) for c in categories])
+
+
+@app.route('/catalog/<string:catalog_name>/items/JSON')
+def showAllItemJSON(catalog_name):
+    if 'username' not in login_session:
+        return redirect('/login')
+    categories = session.query(Categories).options(
+        joinedload(Categories.item)).filter_by(name=catalog_name).all()
+    return jsonify(
+            Category=[dict(
+                c.serialize,
+                Item=[i.serialize for i in c.item]) for c in categories])
+
+
+@app.route('/catalog/<string:catalog_name>/<string:item_name>/JSON')
+def showItemDetailJSON(catalog_name, item_name):
+    if 'username' not in login_session:
+        return redirect('/login')
+    categories_id = session.query(
+        Categories).filter_by(name=catalog_name).one()
+    # get item
+    categoriesitem = session.query(CategoriesItem).filter_by(
+        categories_id=categories_id.id, title=item_name).all()
+    return jsonify(CatagoryItems=[i.serialize for i in categoriesitem])
 
 
 # Disconnect based on provider
